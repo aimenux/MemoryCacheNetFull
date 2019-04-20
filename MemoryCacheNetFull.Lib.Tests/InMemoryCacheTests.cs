@@ -15,7 +15,8 @@ namespace MemoryCacheNetFull.Lib.Tests
             Assert.AreEqual(0, cache.Count());
 
             var xx = await cache.AddOrGetAsync<int>("foo",
-                async () => await Task.FromResult(10));
+                async () => await Task.FromResult(10))
+                .ConfigureAwait(false);
 
             Assert.AreEqual(1, cache.Count());
             Assert.AreEqual(10, xx);
@@ -23,7 +24,8 @@ namespace MemoryCacheNetFull.Lib.Tests
             await Task.Delay(1000);
 
             var yy = await cache.AddOrGetAsync<int>("foo",
-                async () => await Task.FromResult(20));
+                async () => await Task.FromResult(20))
+                .ConfigureAwait(false);
 
             Assert.AreEqual(1, cache.Count());
             Assert.AreEqual(10, yy);
@@ -63,7 +65,8 @@ namespace MemoryCacheNetFull.Lib.Tests
             Assert.AreEqual(0, cache.Count());
 
             var xx = await cache.AddOrGetAsync<int>("foo",
-                async () => await Task.FromResult(10));
+                async () => await Task.FromResult(10))
+                .ConfigureAwait(false);
 
             Assert.AreEqual(1, cache.Count());
             Assert.AreEqual(10, xx);
@@ -73,7 +76,8 @@ namespace MemoryCacheNetFull.Lib.Tests
             Assert.AreEqual(0, cache.Count());
 
             var yy = await cache.AddOrGetAsync<int>("foo",
-                async () => await Task.FromResult(20));
+                async () => await Task.FromResult(20))
+                .ConfigureAwait(false);
 
             Assert.AreEqual(1, cache.Count());
             Assert.AreEqual(20, yy);
@@ -99,7 +103,8 @@ namespace MemoryCacheNetFull.Lib.Tests
 
             try
             {
-                await Task.WhenAll(task1, task2, task3);
+                await Task.WhenAll(task1, task2, task3)
+                    .ConfigureAwait(false);
             }
             catch (Exception ex)
             {
