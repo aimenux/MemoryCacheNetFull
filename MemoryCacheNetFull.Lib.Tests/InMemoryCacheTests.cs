@@ -80,5 +80,33 @@ namespace MemoryCacheNetFull.Lib.Tests
 
             Console.WriteLine(cache);
         }
+
+        [TestMethod]
+        public async Task Should_Not_Throw_Exception_When_Get_Or_Add_Or_Flush_Cache()
+        {
+            var cache = new InMemoryCache($"{DateTime.UtcNow}");
+
+            var task1 = cache.AddOrGetAsync<int>("toto",
+                async () => await Task.FromResult(10));
+
+            var task2 = cache.AddOrGetAsync<int>("toto",
+                async () => await Task.FromResult(10));
+
+            var task3 = Task.Run(() =>
+            {
+                cache.ClearCacheEntries();
+            });
+
+            try
+            {
+                await Task.WhenAll(task1, task2, task3);
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
+
+            Console.WriteLine(cache);
+        }
     }
 }
