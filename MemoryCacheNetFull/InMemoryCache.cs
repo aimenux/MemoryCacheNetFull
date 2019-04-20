@@ -2,7 +2,7 @@
 using System.Runtime.Caching;
 using System.Threading.Tasks;
 
-namespace MemoryCacheNetFull.Lib
+namespace MemoryCacheNetFull
 {
     public sealed class InMemoryCache : IDisposable
     {

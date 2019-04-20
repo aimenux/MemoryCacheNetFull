@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace MemoryCacheNetFull.Lib.Tests
+namespace MemoryCacheNetFull.Tests
 {
     [TestClass]
     public class InMemoryCacheTests
@@ -14,7 +14,7 @@ namespace MemoryCacheNetFull.Lib.Tests
 
             Assert.AreEqual(0, cache.Count());
 
-            var xx = await cache.AddOrGetAsync<int>("foo",
+            var xx = await cache.AddOrGetAsync("foo",
                 async () => await Task.FromResult(10))
                 .ConfigureAwait(false);
 
@@ -23,7 +23,7 @@ namespace MemoryCacheNetFull.Lib.Tests
 
             await Task.Delay(1000);
 
-            var yy = await cache.AddOrGetAsync<int>("foo",
+            var yy = await cache.AddOrGetAsync("foo",
                 async () => await Task.FromResult(20))
                 .ConfigureAwait(false);
 
@@ -40,7 +40,7 @@ namespace MemoryCacheNetFull.Lib.Tests
 
             Assert.AreEqual(0, cache.Count());
 
-            var xx = await cache.AddOrGetAsync<int>("foo",
+            var xx = await cache.AddOrGetAsync("foo",
                 async () => await Task.FromResult(10));
 
             Assert.AreEqual(1, cache.Count());
@@ -48,7 +48,7 @@ namespace MemoryCacheNetFull.Lib.Tests
 
             await Task.Delay(6000);
 
-            var yy = await cache.AddOrGetAsync<int>("foo",
+            var yy = await cache.AddOrGetAsync("foo",
                 async () => await Task.FromResult(20));
 
             Assert.AreEqual(1, cache.Count());
@@ -64,7 +64,7 @@ namespace MemoryCacheNetFull.Lib.Tests
 
             Assert.AreEqual(0, cache.Count());
 
-            var xx = await cache.AddOrGetAsync<int>("foo",
+            var xx = await cache.AddOrGetAsync("foo",
                 async () => await Task.FromResult(10))
                 .ConfigureAwait(false);
 
@@ -75,7 +75,7 @@ namespace MemoryCacheNetFull.Lib.Tests
             cache.ClearCacheEntries();
             Assert.AreEqual(0, cache.Count());
 
-            var yy = await cache.AddOrGetAsync<int>("foo",
+            var yy = await cache.AddOrGetAsync("foo",
                 async () => await Task.FromResult(20))
                 .ConfigureAwait(false);
 
@@ -90,10 +90,10 @@ namespace MemoryCacheNetFull.Lib.Tests
         {
             var cache = new InMemoryCache($"{DateTime.UtcNow}");
 
-            var task1 = cache.AddOrGetAsync<int>("toto",
+            var task1 = cache.AddOrGetAsync("toto",
                 async () => await Task.FromResult(10));
 
-            var task2 = cache.AddOrGetAsync<int>("toto",
+            var task2 = cache.AddOrGetAsync("toto",
                 async () => await Task.FromResult(10));
 
             var task3 = Task.Run(() =>

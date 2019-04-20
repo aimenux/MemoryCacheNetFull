@@ -8,8 +8,8 @@
     <ProjectGuid>{7E5541B6-86B5-40D1-B33C-711261FFB9AD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MemoryCacheNetFull.Lib.Tests</RootNamespace>
-    <AssemblyName>MemoryCacheNetFull.Lib.Tests</AssemblyName>
+    <RootNamespace>MemoryCacheNetFull.Tests</RootNamespace>
+    <AssemblyName>MemoryCacheNetFull.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MemoryCacheNetFull.Lib\MemoryCacheNetFull.Lib.csproj">
+    <ProjectReference Include="..\MemoryCacheNetFull\MemoryCacheNetFull.csproj">
       <Project>{a2179cc8-485f-4e13-a09a-2a73a36bf5ab}</Project>
-      <Name>MemoryCacheNetFull.Lib</Name>
+      <Name>MemoryCacheNetFull</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

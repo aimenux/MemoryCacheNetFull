@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Runtime.Caching;
 
-namespace MemoryCacheNetFull.Lib
+namespace MemoryCacheNetFull
 {
     public class FluchCacheMonitor : ChangeMonitor
     {

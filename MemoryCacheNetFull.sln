@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryCacheNetFull.Lib", "MemoryCacheNetFull.Lib\MemoryCacheNetFull.Lib.csproj", "{A2179CC8-485F-4E13-A09A-2A73A36BF5AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryCacheNetFull", "MemoryCacheNetFull\MemoryCacheNetFull.csproj", "{A2179CC8-485F-4E13-A09A-2A73A36BF5AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryCacheNetFull.Lib.Tests", "MemoryCacheNetFull.Lib.Tests\MemoryCacheNetFull.Lib.Tests.csproj", "{7E5541B6-86B5-40D1-B33C-711261FFB9AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryCacheNetFull.Tests", "MemoryCacheNetFull.Tests\MemoryCacheNetFull.Tests.csproj", "{7E5541B6-86B5-40D1-B33C-711261FFB9AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

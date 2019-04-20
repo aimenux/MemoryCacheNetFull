@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MemoryCacheNetFull.Lib
+namespace MemoryCacheNetFull
 {
     public class FlushChangeEventArgs : EventArgs
     {

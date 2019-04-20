@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Caching;
 
-namespace MemoryCacheNetFull.Lib
+namespace MemoryCacheNetFull
 {
     public static class CacheItemPolicyFactory
     {
