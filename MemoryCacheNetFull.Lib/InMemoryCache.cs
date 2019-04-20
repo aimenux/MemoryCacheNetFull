@@ -36,6 +36,11 @@ namespace MemoryCacheNetFull.Lib
             }
         }
 
+        public void ClearCacheEntries()
+        {
+            FluchCacheMonitor.Fluch();
+        }
+
         public override string ToString()
         {
             return $"{_cache.Name} ({Count()} entries)";
