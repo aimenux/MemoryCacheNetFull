@@ -1,3 +1,5 @@
+[![CI](https://github.com/aimenux/MemoryCacheNetFull/actions/workflows/ci.yml/badge.svg)](https://github.com/aimenux/MemoryCacheNetFull/actions/workflows/ci.yml)
+
 # MemoryCacheNetFull
 ```
 MemoryCache Wrapper (Net Full)
