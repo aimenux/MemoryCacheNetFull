@@ -18,6 +18,8 @@ jobs:
         uses: nuget/setup-nuget@v1
       - name: Restore Packages
         run: nuget restore MemoryCacheNetFull.sln
+      - name: Navigate to Workspace
+        run: cd $GITHUB_WORKSPACE
       - name: Build DotNET
         run: |
-         MSBuild.exe $Env:GITHUB_WORKSPACE\MemoryCacheNetFull.sln
+         MSBuild.exe MemoryCacheNetFull.sln
