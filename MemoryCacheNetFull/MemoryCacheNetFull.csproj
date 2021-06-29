@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CacheItemPolicyFactory.cs" />
+    <Compile Include="IInMemoryCache.cs" />
     <Compile Include="InMemoryCache.cs" />
     <Compile Include="FlushChangeEventArgs.cs" />
     <Compile Include="FluchCacheMonitor.cs" />

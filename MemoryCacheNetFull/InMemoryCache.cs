@@ -4,25 +4,23 @@ using System.Threading.Tasks;
 
 namespace MemoryCacheNetFull
 {
-    public sealed class InMemoryCache : IDisposable
+    public sealed class InMemoryCache : IInMemoryCache, IDisposable
     {
         private readonly MemoryCache _cache;
-        private const int CacheSecondsDuration = 5;
+        private readonly int _cacheDurationInSeconds;
 
-        public InMemoryCache(string name)
+        public InMemoryCache(string name, int cacheDurationInSeconds)
         {
             _cache = new MemoryCache(name);
+            _cacheDurationInSeconds = cacheDurationInSeconds;
         }
 
-        public long Count()
-        {
-            return _cache.GetCount();
-        }
+        public long Size => _cache.GetCount();
 
         public async Task<T> AddOrGetAsync<T>(string key, Func<Task<T>> func)
         {
             var newValue = new Lazy<Task<T>>(func);
-            var expiration = DateTimeOffset.UtcNow.AddSeconds(CacheSecondsDuration);
+            var expiration = DateTimeOffset.UtcNow.AddSeconds(_cacheDurationInSeconds);
             var cacheItemPolicy = CacheItemPolicyFactory.GetFlushCachePolicy(expiration);
             var oldValue = _cache.AddOrGetExisting(key, newValue, cacheItemPolicy) as Lazy<Task<T>>;
             try
@@ -36,14 +34,11 @@ namespace MemoryCacheNetFull
             }
         }
 
-        public void ClearCacheEntries()
+        public Task ClearCacheEntriesAsync()
         {
             FluchCacheMonitor.Fluch();
-        }
-
-        public override string ToString()
-        {
-            return $"{_cache.Name} ({Count()} entries)";
+            Console.WriteLine("Flushing cache");
+            return Task.CompletedTask;
         }
 
         public void Dispose()
