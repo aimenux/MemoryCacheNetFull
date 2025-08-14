@@ -4,19 +4,19 @@ using System.Runtime.Caching;
 
 namespace MemoryCacheNetFull
 {
-    public class FluchCacheMonitor : ChangeMonitor
+    public class FlushCacheMonitor : ChangeMonitor
     {
         private static event EventHandler<FlushChangeEventArgs> Flushed;
 
         public override string UniqueId { get; } = Guid.NewGuid().ToString();
 
-        public FluchCacheMonitor()
+        public FlushCacheMonitor()
         {
             Flushed += OnFlushRaised;
             base.InitializationComplete();
         }
 
-        public static void Fluch()
+        public static void Flush()
         {
             Flushed?.Invoke(null, new FlushChangeEventArgs());
         }

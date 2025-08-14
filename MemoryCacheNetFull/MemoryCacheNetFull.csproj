@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MemoryCacheNetFull</RootNamespace>
     <AssemblyName>MemoryCacheNetFull</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -46,7 +46,7 @@
     <Compile Include="IInMemoryCache.cs" />
     <Compile Include="InMemoryCache.cs" />
     <Compile Include="FlushChangeEventArgs.cs" />
-    <Compile Include="FluchCacheMonitor.cs" />
+    <Compile Include="FlushCacheMonitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

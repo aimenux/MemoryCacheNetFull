@@ -36,7 +36,7 @@ namespace MemoryCacheNetFull
 
         public Task ClearCacheEntriesAsync()
         {
-            FluchCacheMonitor.Fluch();
+            FlushCacheMonitor.Flush();
             Console.WriteLine("Flushing cache");
             return Task.CompletedTask;
         }

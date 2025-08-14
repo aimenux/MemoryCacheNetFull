@@ -11,7 +11,7 @@ namespace MemoryCacheNetFull
             {
                 AbsoluteExpiration = absoluteExpiration,
             };
-            policy.ChangeMonitors.Add(new FluchCacheMonitor());
+            policy.ChangeMonitors.Add(new FlushCacheMonitor());
             return policy;
         }
     }
